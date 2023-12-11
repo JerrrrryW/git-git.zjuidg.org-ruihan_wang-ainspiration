@@ -1,38 +1,108 @@
-.App {
+/* App.css */
+.app {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #555;
+  color: white;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.design-space, .inspiring-image-space {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 250px; /* minimum size of the boxes */
+}
+
+.design-space {
+  background-color: pink;
+  text-align: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.inspiring-image-space {
+  background-color: purple;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.canvas-area {
+  border: 0px solid #000;
+  margin-top: 20px;
+  height: 200px; /* Adjust the height as needed */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Media Queries */
+
+/* For tablets */
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .main {
+      flex-direction: column;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* For mobile phones */
+@media (max-width: 480px) {
+  .menu-icon {
+      font-size: 30px; /* larger icon for smaller devices */
+  }
+
+  .design-space, .inspiring-image-space {
+      min-width: 100%; /* make boxes full width on small screens */
+      margin: 5px 0; /* reduce margin for small screens */
+  }
+
+  .button {
+      width: 100%; /* full width buttons on small screens */
+  }
+}
+
+.button-bar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
